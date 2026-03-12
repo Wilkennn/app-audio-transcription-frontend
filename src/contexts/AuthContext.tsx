@@ -7,7 +7,6 @@ const AuthContext = createContext<AuthContextType | null>(null);
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [accessToken, setAccessToken] = useState<string | null>(null);
-  // COMEÇA COMO TRUE: Impede a tela de renderizar antes da checagem
   const [isLoadingSession, setIsLoadingSession] = useState(true); 
 
   const apiFetch = useCallback(async (endpoint: string, options: RequestInit = {}) => {
@@ -50,13 +49,12 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     }
   };
 
-  // CHECAGEM INICIAL AO CARREGAR A PÁGINA (F5)
   useEffect(() => {
     const checkSession = async () => {
       try {
         const res = await fetch(`${API_BASE_URL}/auth/refresh`, { 
             method: "POST", 
-            credentials: "include" // Obriga o envio do cookie
+            credentials: "include" 
         });
         if (res.ok) {
             const data = await res.json();
@@ -67,7 +65,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       } catch (e) {
         setAccessToken(null);
       } finally {
-        // SÓ LIBERA A TELA DEPOIS QUE TUDO TERMINAR
         setIsLoadingSession(false);
       }
     };
