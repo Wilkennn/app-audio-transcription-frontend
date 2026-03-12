@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { 
   ArrowLeft, Download, Loader2, Cat, PawPrint, Lightbulb, 
   BookOpen, List, Quote, Youtube, PlayCircle, Search, HelpCircle, 
-  ExternalLink, FileText, 
+  ExternalLink,
   FileAudio
 } from "lucide-react";
 import { useAuth } from "../contexts/AuthContext";

@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { Cat, Trash2, Calendar, FileAudio, ArrowRight, PawPrint } from "lucide-react";
+import { Cat, Trash2, Calendar, FileAudio, ArrowRight } from "lucide-react";
 import { useAuth } from "../contexts/AuthContext";
 import type { Transcription } from "../types";
 import { StatusBadge } from "../components/StatusBadge";
