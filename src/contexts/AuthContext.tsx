@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from "react";
 import type { AuthContextType } from "../types";
 
-export const API_BASE_URL = import.meta.env.VITE_API_URL || "https://app-audio-transcription.onrender.com";
+export const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
